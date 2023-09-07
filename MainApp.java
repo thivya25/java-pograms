@@ -1,30 +1,50 @@
-package code1;
+package mainapppackage1;
 
-class Student{
-	  int studentid;
-	  String studentname;
-	  int studentage;
-	  
-	  void displayStudentDetails(){
-	     System.out.println("Student id ="+studentid);
-	     System.out.println("Student name="+studentname);
-	     System.out.println("Student age ="+studentage);
-	   }
+import mainapppackage2.HR;
 
-	@Override
-	public String toString() {
-		return "Student [studentid=" + studentid + ", studentname=" + studentname + ", studentage=" + studentage + "]";
-	}
-
+//default, protected, public
+class Employee{
+		private int i;
+		
+		private void empPersonalDetails() {
+			System.out.println("empPersonalDetails");
+		}
+		protected void display() {
+			System.out.println("display method "+i);
+			empPersonalDetails();
+		}
+}
+class Employees extends HR
+{
+	private int i;
 	
-	  
+	private void empPersonalDetails()
+	{
+		System.out.println("empPersonalDetails");
 	}
+	public void display() 
+	{
+		System.out.println("display method "+id);
+		System.out.println("display method "+name);
+		
+		empPersonalDetails();
+	}
+}
 
-public class MainApp{
-	     public static void main(String args[]){
-	              System.out.println("Main");
-	             
-	              Student sob = new Student();
-	                   sob.displayStudentDetails();
-	          }
-	}
+
+	public class MainApp {
+
+		public static void main(String[] args) 
+		{
+			Employees eob = new Employees();
+			eob.input();
+			eob.display();
+			
+//			HR hob=new HR();
+//			hob.input();
+//		     hob.display();
+
+		}
+		
+
+}
