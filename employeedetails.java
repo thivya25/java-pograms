@@ -1,7 +1,7 @@
-package code1;  
+package thivyashreepackage;  
 import java.util.Scanner;
 
-class employee{
+class employee1{
 	  int employeeid;
 	  String employeename;
 	  int employeeage;
@@ -35,13 +35,13 @@ public class employeedetails{
 	     public static void main(String args[]){
 	              System.out.println("Main");
 	             
-	              employee ed1 = new employee();
+	              employee1 ed1 = new employee1();
 	              
 	              ed1.inputEmployeeData();
 	                   ed1.displayEmployeeDetails();
 	                   System.out.println(ed1);
 	                   
-	                   employee ed2 = new employee();
+	                   employee1 ed2 = new employee1();
 	                   ed2.inputEmployeeData();
 	                   ed2.displayEmployeeDetails();
 	                   System.out.println(ed2);
