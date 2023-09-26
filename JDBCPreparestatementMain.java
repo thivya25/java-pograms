@@ -1,7 +1,9 @@
 package com.edu;
+
 import java.sql.SQLException;
 import java.util.Scanner;
-public class MainApp {
+
+public class JDBCPreparestatementMain {
 
 	public static void main(String[] args) throws SQLException {
 		int select;
@@ -16,13 +18,13 @@ public class MainApp {
 			
 			 switch(select){
 				 
-				 case 1:DatabaseOperation.displayrecord();
+				 case 1:DataBaseConnectionPrepared.displayrecord();
 				 break;
-				 case 2:DatabaseOperation.addrecord();
+				 case 2:DataBaseConnectionPrepared.addrecord();
 				 break;
-				 case 3:DatabaseOperation.deleterecord();
+				 case 3:DataBaseConnectionPrepared.deleterecord();
 				 break;
-				 case 4:DatabaseOperation.insertrecord();
+				 case 4:DataBaseConnectionPrepared.insertrecord();
 				 break;
 			 }
 			 System.out.println("do you want to continue y to continue,any other key to stop");
@@ -37,6 +39,7 @@ public class MainApp {
 		}
 		
 			 
+
 	}
 
 }
