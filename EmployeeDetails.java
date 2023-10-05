@@ -1,35 +1,49 @@
-package com.edu;
+package thivyashreepackage;  
+import java.util.Scanner;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
+class employee1{
+	  int employeeid;
+	  String employeename;
+	  int employeeage;
+	 
 
-public class EmployeeDetails {
-
-	public static void main(String[] args) {
-		String driver="com.mysql.cj.jdbc.Driver";
-		String url="jdbc:mysql://localhost:3306/thivyadb";
-		String un="root";
-		String pass="toor";
-		// TODO Auto-generated method stub
-		try {
-			Class.forName(driver);
-			Connection con=DriverManager.getConnection(url, un, pass);
-			if(con!=null) {
-				System.out.println("connceted");
-				Statement st=con.createStatement();//while importing we have to import sql.statement
-				String sql="select * from department";
-				ResultSet rs=st.executeQuery(sql);
-				while(rs.next()) {
-					System.out.println(rs.getInt(1) +" "+rs.getString(2)+" "+rs.getString(3));
-				}
-			}
-		}catch(Exception e) {
-			e.printStackTrace();
-		}
-
-
+	void inputEmployeeData() {
+		  Scanner sc = new Scanner(System.in);
+		  System.out.println("Enter name");
+		  employeename =sc.nextLine();
+		  
+		  System.out.println("Enter id");
+		  employeeid = sc.nextInt();
+		  
+		  System.out.println("Enter age");
+		  employeeage = sc.nextInt();
+		  
+	  }
+	  
+	  void displayEmployeeDetails(){
+	     System.out.println("Student id ="+employeeid);
+	     System.out.println("Student name="+employeename);
+	     System.out.println("Student age ="+employeeage);
+	   }
+   @Override
+	public String toString() {
+		return "Student [studentid=" + employeeid + ", studentname=" + employeename + ", studentage=" + employeeage + "]";
 	}
-
+	  
+}
+public class employeedetails{
+	     public static void main(String args[]){
+	              System.out.println("Main");
+	             
+	              employee1 ed1 = new employee1();
+	              
+	              ed1.inputEmployeeData();
+	                   ed1.displayEmployeeDetails();
+	                   System.out.println(ed1);
+	                   
+	                   employee1 ed2 = new employee1();
+	                   ed2.inputEmployeeData();
+	                   ed2.displayEmployeeDetails();
+	                   System.out.println(ed2);
+	         }
 }
